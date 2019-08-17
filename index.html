@@ -3,35 +3,103 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Python API Homework</title>
+  <title>Web Visualization Homework</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
 </head>
-<style>
-body {
-    background-color:  #ebebe0
-}
-h1 {color:black}
-</style>
 
 <body>
-  <!-- Header -->
-  <h1 align="center">Python API Homework</h1>
 
-  <p>The following images were generated from my Python API homework. </p>
+  <!--NavBar--> 
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home</a>
+              </li>
+          </ul>
+      </div>
+      <div class="mx-auto order-0">
+          <a class="navbar-brand mx-auto" href="index.html">Web Visualizations Homework</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+      </div>
+      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown justify-content-end">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Plots</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="Cloudiness.html">Cloudiness</a>
+                    <a class="dropdown-item" href="Humidity.html">Humidity</a>
+                    <a class="dropdown-item" href="MaxTemp.html">MaxTemp</a>
+                    <a class="dropdown-item" href="WindSpeed.html">WindSpeed</a>
+                  </div>
+                </li>  
+            <li class="nav-item">
+                  <a class="nav-link" href="Comparisons.html">Comparisons</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="Data.html">Data</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
 
-  <a href="SamplePage.html">Page Link</a>
-
-  <h3> Cloudiness </h3>    
-  <img src="Images/Cloudiness.png" alt = "Picture"/>
-
-  <h3> Humidity </h3>    
-  <img src="Images/Humidity.png " alt = "Picture"/>
-
-  <h3> MaxTemp </h3>    
-  <img src="Images/MaxTemp.png " alt = "Picture"/>
-
-  <h3> WindSpeed</h3>    
-  <img src="Images/WindSpeed.png " alt = "Picture"/>
-
+  <!--Landing Page Items -->
+  <br>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h3 style="text-align:center" class="card-title">Summary: Weather Data Visualizations </h3>
+            <p> The visualizations on this page were generated as part of a Python API exercise for the Data Analytics and Visualization Bootcamp. Each of the visualizations compares a weather measurement of a given city to the latitude of the city and plots the results on a scatterplot. </p> 
+            <p> By looking at each of these plots together and separately, it is clear that there are certain weather measurements that have a strong relationship with latitude (such as maximum temperature) and others in which the relationship is less clear (such as cloudiness and windspeed). </p> 
+            <p> A more detailed description of each the plots are available on the individual plot pages. These pages can be accessed by using the dropdown menu in the navigation bar above. The comparisons page also contains all four visualizations displayed together. The data used to generate the visualizations are available on the data page. </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Visualizations</h3>
+            <p class="card-text">Click through the carousel to view each of the weather visualizations generated for this project. You can also use the plots dropdown at the top for more details on each of the visualizations.</p>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                      </ol>
+                  <div class="carousel-item active">
+                    <img src="Images/Cloudiness.png" class="d-block w-100" alt="Cloudiness">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="Images/Humidity.png" class="d-block w-100" alt="Humidity">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="Images/MaxTemp.png" class="d-block w-100" alt="MaxTemp">
+                  </div>
+                  <div class="carousel-item">
+                      <img src="Images/WindSpeed.png" class="d-block w-100" alt="WindSpeed">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 </body>
 </html>
